@@ -1,0 +1,5 @@
+type: module
+name: Entity Claim
+core: 8.x
+description: Provides a configrable entity to create claim for any kind of entity.
+

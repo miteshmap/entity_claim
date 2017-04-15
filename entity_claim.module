@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains entity_claim.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function entity_claim_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the entity_claim module.
+    case 'help.page.entity_claim':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function entity_claim_theme() {
+  $theme = [];
+  $theme['claim'] = [
+    'render element' => 'elements',
+    'file' => 'claim.page.inc',
+    'template' => 'claim',
+  ];
+  $theme['claim_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'claim.page.inc',
+  ];
+  return $theme;
+}

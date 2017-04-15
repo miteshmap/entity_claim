@@ -1,0 +1,19 @@
+add claim entities:
+  title: 'Create new Claim entities'
+
+administer claim entities:
+  title: 'Administer Claim entities'
+  description: 'Allow to access the administration form to configure Claim entities.'
+  restrict access: true
+
+delete claim entities:
+  title: 'Delete Claim entities'
+
+edit claim entities:
+  title: 'Edit Claim entities'
+
+view published claim entities:
+  title: 'View published Claim entities'
+
+view unpublished claim entities:
+  title: 'View unpublished Claim entities'

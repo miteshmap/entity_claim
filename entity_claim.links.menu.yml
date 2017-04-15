@@ -1,0 +1,16 @@
+# Claim menu items definition
+entity.claim.collection:
+  title: 'Claim list'
+  route_name: entity.claim.collection
+  description: 'List Claim entities'
+  parent: system.admin_structure
+  weight: 100
+
+# Claim type menu items definition
+entity.claim_type.collection:
+  title: 'Claim type'
+  route_name: entity.claim_type.collection
+  description: 'List Claim type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

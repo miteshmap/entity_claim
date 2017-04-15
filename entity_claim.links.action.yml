@@ -1,0 +1,11 @@
+entity.claim.add_form:
+  route_name: 'claim.add_page'
+  title: 'Add Claim'
+  appears_on:
+    - entity.claim.collection
+entity.claim_type.add_form:
+  route_name: 'entity.claim_type.add_form'
+  title: 'Add Claim type'
+  appears_on:
+    - entity.claim_type.collection
+

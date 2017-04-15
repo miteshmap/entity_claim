@@ -1,0 +1,17 @@
+# Claim routing definition
+entity.claim.canonical:
+  route_name: entity.claim.canonical
+  base_route: entity.claim.canonical
+  title: 'View'
+
+entity.claim.edit_form:
+  route_name: entity.claim.edit_form
+  base_route: entity.claim.canonical
+  title: Edit
+
+entity.claim.delete_form:
+  route_name:  entity.claim.delete_form
+  base_route:  entity.claim.canonical
+  title: Delete
+  weight: 10
+
