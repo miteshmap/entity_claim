@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_help().
@@ -40,3 +41,11 @@ function entity_claim_theme() {
   ];
   return $theme;
 }
+
+/**
+ * Implements hook_node_links_alter().
+ */
+function entity_claim_node_links_alter(array &$links, NodeInterface $entity, array &$context) {
+
+}
+

@@ -8,5 +8,11 @@ entity_claim.claim_type.*:
     label:
       type: label
       label: 'Label'
+    entity:
+      type: string
+      label: 'Entity'
+    bundle:
+      type: string
+      label: 'Bundle'
     uuid:
       type: string

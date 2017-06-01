@@ -3,7 +3,7 @@ entity.claim.collection:
   title: 'Claim list'
   route_name: entity.claim.collection
   description: 'List Claim entities'
-  parent: system.admin_structure
+  parent: system.admin_content
   weight: 100
 
 # Claim type menu items definition

@@ -33,7 +33,9 @@ use Drupal\entity_claim\ClaimTypeInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "label",
- *     "uuid" = "uuid"
+ *     "uuid" = "uuid",
+ *     "entity" = "Entity",
+ *     "bundle" = "bundle"
  *   },
  *   links = {
  *     "canonical" = "/admin/structure/claim_type/{claim_type}",
@@ -58,5 +60,33 @@ class ClaimType extends ConfigEntityBundleBase implements ClaimTypeInterface {
    * @var string
    */
   protected $label;
+
+  /**
+   * The Entity to Claim by this Claim type.
+   *
+   * @var string
+   */
+  protected $entity;
+
+  /**
+   * The Bundle of Entity to claim by this Claim type..
+   *
+   * @var string
+   */
+  protected $bundle;
+
+  /**
+   * @inheritdoc
+   */
+  public function getClaimEntity() {
+    return $this->entity;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function getClaimEntityBundle() {
+    return $this->bundle;
+  }
 
 }

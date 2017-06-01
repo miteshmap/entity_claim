@@ -13,6 +13,10 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
  * Provides an interface for defining Claim type entities.
  */
 interface ClaimTypeInterface extends ConfigEntityInterface {
-  // Add get/set methods for your configuration properties here.
+  // Get Entity of claim type.
+  public function getClaimEntity();
+
+  // Get Bundle of claim type.
+  public function getClaimEntityBundle();
 
 }

@@ -10,6 +10,7 @@ namespace Drupal\entity_claim;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;
 use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Provides routes for Claim type entities.
@@ -33,6 +34,27 @@ class ClaimTypeHtmlRouteProvider extends AdminHtmlRouteProvider {
     if ($add_form_route = $this->getAddFormRoute($entity_type)) {
       $collection->add("entity.{$entity_type_id}.add_form", $add_form_route);
     }
+
+
+    $entity_type_id = $entity_type->id();
+    $route = new Route($entity_type->getLinkTemplate('add-form'));
+
+    $entity_type_id = $entity_type->id();
+    $bundle_entity = \Drupal::entityManager()->getStorage($entity_type_id)->load('test_claim');
+
+    $route_collection = new RouteCollection();
+    $route = (new Route('/node/{node}/create/{claim_type}/claim'))
+      ->addDefaults([
+        '_entity_form' => "claim.add",
+        '_title' => "Add {$entity_type->getLabel()}",
+      ])
+      ->setRequirement('node', '\d+')
+      ->setRequirement('_entity_create_access', $entity_type_id)
+      ->setOption('parameters', [
+        'entity' => [$bundle_entity],
+        $entity_type_id => ['type' => 'entity:' . $entity_type_id],
+      ]);
+    $collection->add('entity.node.claim', $route);
 
     return $collection;
   }

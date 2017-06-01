@@ -15,3 +15,7 @@ entity.claim.delete_form:
   title: Delete
   weight: 10
 
+entity.claim.collection:
+  title: 'Claims'
+  route_name: entity.claim.collection
+  base_route: system.admin_content
